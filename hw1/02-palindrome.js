@@ -7,13 +7,20 @@ function handleInput() {
   const result = document.getElementById("result");
 
   let inputReversed = input.split("").reverse().join("");
-  if (inputReversed === input) {
-    document.getElementById("result").innerHTML = "Yes, this is a palindrome";
-    result.classList.add("text-success");
-    result.classList.remove("text-danger");
+
+  if (input.length === 0 || isNaN(Number(input)) ) {
+    result.innerHTML = "Please enter numerical input";
+    console.log("String is empty");
   } else {
-    document.getElementById("result").innerHTML = "No.Try again";
-    result.classList.add("text-danger");
-    result.classList.remove("text-success");
+    if (inputReversed === input) {
+      result.innerHTML = "Yes, this is a palindrome";
+      result.style.color = 'darkGreen'
+    } else {
+      result.innerHTML = "No.Try again";
+      result.style.color = 'darkRed';
+    }
+  }
+  if (input === "") {
+    result.innerHTML = "";
   }
 }

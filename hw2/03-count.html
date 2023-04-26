@@ -6,19 +6,28 @@
     <title>03 - Count</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      mark {
+        background-color: yellow;
+      }
+      body {
+        background-color: #043145;
+      }
+    </style>
     <script defer src="03-count.js"></script>
   </head>
-  <body class="bg-primary-dark">
-    <main class="p-3">
-      <h1>Exercise 03 - Count</h1>
+  <body>
+    <main class="w-50 mx-auto border p-3 mt-5 bg-light rounded">
+      <h1 class="text-center">Exercise 03 - Count</h1>
       <hr />
       <div>
-        <label>Highlight all occurences of a word:</label>
-        <input />
+        <label for="wordInput">Highlight all occurences of a word:</label>
+        <input id="wordInput" name="wordInput" />
       </div>
       <hr />
-      <div id="paragraph">
+      <div id="paragraph" class="paragraph">
         It was the best of times, it was the worst of times, it was the age of
         wisdom, it was the age of foolishness, it was the epoch of belief, it
         was the epoch of incredulity, it was the season of Light, it was the

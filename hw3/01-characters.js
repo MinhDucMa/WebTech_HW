@@ -11,11 +11,36 @@ fetch(url)
     const section = document.querySelector("section");
     section.insertAdjacentHTML("beforeend", '<div class="row"></div>');
 
-    data.forEach((character) => {
-      const card = `<div class="col-12 col-md-6 col-lg-3"><div class="card  text-center h-100"><img class="card-img-top h-100 p-2" src="${character.imageUrl}" ><div class="card-text"><p>${character.fullName}</p><p>${character.title}</p></div></div></div></div>`;
-      const row = document.querySelector(".row");
-      row.insertAdjacentHTML("beforeend", card);
-    });
+    
+    const row = document.querySelector('.row');
+
+for (const character of data) {
+  // Create the elements
+  const col = document.createElement('div');
+  col.className = 'col-12 col-md-6 col-lg-3';
+  const card = document.createElement('div');
+  card.className = 'card text-center h-100';
+  const img = document.createElement('img');
+  img.className = 'card-img-top h-100 p-2';
+  img.src = character.imageUrl;
+  const cardText = document.createElement('div');
+  cardText.className = 'card-text';
+  const name = document.createElement('p');
+  name.textContent = character.fullName;
+  const title = document.createElement('p');
+  title.textContent = character.title;
+
+  // Build the card element
+  cardText.appendChild(name);
+  cardText.appendChild(title);
+  card.appendChild(img);
+  card.appendChild(cardText);
+  col.appendChild(card);
+
+  // Add the card to the container element
+  row.appendChild(col);
+}
+
   })
   .catch((error) => console.log(error));
 
